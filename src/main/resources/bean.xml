@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="iEngine" class="org.cfs.PetrolEngine"/>-->
+
+<!--    <bean id="iEngine" class="org.cfs.DesilEngine"/>-->
+
+<!--    <bean id="PetrolEngine" class="org.cfs.PetrolEngine" autowire-candidate="false"/>-->
+<!--    <bean id="DesilEngine" class="org.cfs.DesilEngine"/>-->
+
+<!--    <bean id="gannacar" class="org.cfs.GannaCar" autowire="byType"/>-->
+
+             <!--  Constructor
+               autowire="no"  If AutoWire is No Then We USe Constructor-arg and Prototype-arg-->
+
+<!--        <bean id="PetrolEngine" class="org.cfs.PetrolEngine" autowire-candidate="false"/>-->
+<!--        <bean id="DesilEngine" class="org.cfs.DesilEngine"/>-->
+
+
+    <bean id="PetrolEngine" class="org.cfs.PetrolEngine"/>
+<!--    <bean id="gannacar" class="org.cfs.GannaCar" autowire="no">-->
+<!--            <property name="iEngine" ref="PetrolEngine"/>-->
+<!--        </bean>-->
+
+    <bean id="gannacar" class="org.cfs.GannaCar">
+        <constructor-arg ref="PetrolEngine"/>
+    </bean>
+
+</beans>
